@@ -1,187 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
-<head >
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
-  <style>
-    .Aclonica{
-      font-family: Aclonica;
-      color: rgb(20, 35, 245);
-    }
-    .Aclonica1 {
-      font-family: Aclonica;
-      color: green;
-    }
-    .Aclonica2 {
-      font-family: Aclonica;
-      color: orangered;
-    }
-    .Aclonica3 {
-      font-family: Aclonica;
-      color: purple;
-    }
-    .Aclonica4 {
-      font-family: Aclonica;
-      color: chocolate;
-    }
-    p {
-      font-family: "Ubuntu";
-      font-size: large;
-    }
-    li {
-      font-family: "Ubuntu";
-      font-size: large;
-    }
-    h1 {
-      font-family: Lobster;
-      color: red;
-    }
-    .border1{
-      border-color: red;
-      border-width: 5px;
-      border-style: solid;
-      border-radius: 10%;
-    }
-    .border2 {
-      border-color: royalblue;
-      border-width: 5px;
-      border-style: solid;
-      border-radius: 10%;
-    }
-    .ubntuFont {
-      font-family: Ubuntu;
-    }
-  </style>
-  <title>Debdip Das Dipto</title>
+<html>
+<head>
+	<title>Javascript Practice</title>
 </head>
-<body style="background-color:blue">
-  <main>
-    <div style="background-color:whitesmoke">
-      <div>
-        <a href="#about me"> <button style="font-family: galada; background-color: gold; color: red;">About Myself</button></a>
-        <a href="#my education"> <button
-            style="font-family: galada; background-color: rgb(255, 62, 255); color: rgb(6, 6, 117)">My Education</button></a>
-        <a href="#my hobbies"> <button style="font-family: galada; background-color: tomato; color: rgb(20, 177, 20);">My
-            hobbies</button></a>
-        <a href="#my favourite books"> <button style="font-family: galada; background-color: lawngreen; color: magenta;">My
-            favourite books</button></a>
-        <a href="#my competitve programming profile"> <button
-            style="font-family: galada; background-color: cyan; color: blue;">My competitive programming profile</button></a>
-      </div>
-      <i><h1 style="text-align: center; margin: 30px;">Welcome to my website!</h1></i>
-    <br>
-    <div>
-      <img src="myPhoto.jpg" alt="" height="275" width="150sp" class="border1" style="margin-right: 10px;">
-      <img src="myPhoto.jpg2.jpg" alt="" height="275sp" width="350sp" class="border2" style="margin-right: 10px;">
-      <img src="myPhoto3.jpg" alt="" style="border-color: green; border-width: 5px; border-style: solid; border-radius: 10%;"
-        height="275sp" width="350sp">
-    </div>
-    </div>
-    <div style="background-color: aqua;">
-      <u><i><h2 id="about me" class="Aclonica" style="text-align: center; margin: 30px;">About Myself</h2></i></u>
-      <br>
-      <ul>
-      <li>Name: Debdip Das Dipto</li>
-      <br>
-      <li>Father's Name: Uttam Das</li>
-      <br>
-      <li>Mother's Name: Minoti Das</li>
-      <br>
-      <li>Date of Birth: 1 December 2005</li>
-      <li><p>Current Institution: Sylhet Government Pilot High School</p></li>
-    </ul>
-    <br>
-    </div>
-    <!-- <hr> -->
+<body>
+<div style="background-color: gold; border-radius: 5px; border: dashed; height: 200px;">
+<p style="text-align: center; margin-top: 45px; color: black;" id="motivation"> You will get a lot of motivatinal quotes from here! So, get motivated and reharged again!</p>
+<p style="text-align: center; margin-top: 45px" id="poet"> 
+	<span>Click <b><i>Next</i></b> button to read further or click <b><i>Previous</i></b> button to read the previous quotes!</span> </p>
+</div>
+<button onclick="beMotivatedD()" style="color: yellow;  width: 200px; height: 100px; margin: 30px; background-color: red;"> <p style="font-size: 20"></p> Previous </button>
+<button onclick="beMotivatedI()" style="color: yellow; width: 200px; height: 100px; margin-left: 700px; background-color: blue;"> Next </button>
+<p id="writing"></p>
+<script>
+	var val = 0;
+	function beMotivatedI() {
+		if (val == 5) {
+			val = val % 5;
+		}
+		console.log(val);
+		if (val == 0) {
+			val++;
+			var v = document.getElementById('motivation');
+			v.style.color = "blue";
+			v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
+			v.style.fontSize = "50px";
+			var p = document.getElementById("poet");
+			p.style.color = "green";
+			p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
+			p.style.fontSize = "30px";
+		}
 
-    <div style="background-color: yellow" >
-    
-      <u><b><i><h2 id="my education" class="Aclonica1" style="text-align: center; margin: 30px;">My Education</h2></i></b></u>
-      <ul>
-        <li>Current Class: 10</li>
-        <br>
-        <li>Current Subject: Science</li>
-        <br>
-        <li>Current School: Sylhet Government Pilot High School</li>
-        <br>
-        <li>Previous School: Basanta Memorial School</li>
-        <br>
-        <li>PEC: GPA - 5.00</li>
-        <br>
-        <li>JSC: GPA - 4.86</li>
-        <br>
-      </ul>
-    
-    </div>
-    
+		else if (val == 1) {
+			val++;
+			var v = document.getElementById('motivation');
+			v.style.color = "blue";
+			v.innerHTML = "<i> If people are doubting how far you can go, go so far that you can't ear them any more. </i>"
+			v.style.fontSize = "30px";
+			var p = document.getElementById("poet");
+			p.style.color = "green";
+			p.innerHTML = "<i> ----------------------- Michele Ruiz</i>"
+			p.style.fontSize = "20px";
+		}
 
-    <!-- <hr> -->
+		else if (val == 2) {
+			val++;
+			var v = document.getElementById('motivation');
+			v.style.color = "blue";
+			v.innerHTML = "<i> You don't have to be great to start, but you have to start to be great. </i>"
+			v.style.fontSize = "40px";
+			var p = document.getElementById("poet");
+			p.style.color = "green";
+			p.innerHTML = "<i> ----------------------- Zig Ziglar</i>"
+			p.style.fontSize = "20px";
+		}
 
-   
+		else if (val == 3) {
+			val++;
+			var v = document.getElementById('motivation');
+			v.style.color = "blue";
+			v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
+			v.style.fontSize = "50px";
+			var p = document.getElementById("poet");
+			p.style.color = "green";
+			p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
+			p.style.fontSize = "30px";
+		}
 
-  <div style="background-color: orange">
-  
+		else if (val == 4) {
+			val++;
+			var v = document.getElementById('motivation');
+			v.style.color = "blue";
+			v.innerHTML = "<i> If you don't build your dreams, someone else will hire you to build theirs.</i>"
+			v.style.fontSize = "50px";
+			var p = document.getElementById("poet");
+			p.style.color = "green";
+			p.innerHTML = ""
+			p.style.fontSize = "30px";
+			val = 0;
+		}
+	}
 
-    <u><i><h2 class="Aclonica2" style="text-align: center; margin: 30px;" id = "my hobbies">My Hobbies</h2></i></u>
-    <p>
-    I have several hobbies. 
-    I like Gardening. 
-    When I get free time I get myself involved in programming contests of different online judges.
-    I like problem solving. And this is my most favourite hobby.
-    </p>
-    <p> I also read books on my free time. My favourite author is Muhammad Zafar Iqbal sir.</p>
-    <u><i><h2 class="Aclonica3" style="text-align: center; margin: 30px;" id = "my favourite books">My favourite books</h2></i></u>
-    <p>Some of the books touched my heart. I can't forget these books in my lifetime. </p>
-    <ul>
-      <li style="font-family: Galada;">দীপু নাম্বার টু - মুহম্মদ জাফর ইকবাল </li>
-      <br>
-      <li style="font-family: Galada;" >আমার বন্ধু রাশেদ - মুহম্মদ জাফর ইকবাল</li>
-      <br>
-      <li style="font-family: Galada;">মা - আনিসুল হক</li>
-      <br>
-      <li style="font-family: Galada;">আমি তপু - মুহম্মদ জাফর ইকবাল</li>
-      <br>
-      <li style="font-family: Galada;">শঙ্খনীল কারাগার - হুমায়ুন আহমেদ</li>
-      <br>
-      <li style="font-family: Galada;">চাঁদের পাহাড় - বিভূতিভুষণ বন্দ্যোপাধ্যায়</li>
-      <br>
-      <li style="font-family: Galada;">আদর্শ হিন্দু হোটেল - বিভূতিভুষণ বন্দ্যোপাধ্যায়</li>
-      <br>
-    </ul>
-  </div>
-    <!-- <hr> -->
+	function beMotivatedD() {
+			console.log(val);
+		  if (val == 0) {
+				val = 4;
+				var v = document.getElementById('motivation');
+				v.style.color = "blue";
+				v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
+				v.style.fontSize = "50px";
+				var p = document.getElementById("poet");
+				p.style.color = "green";
+				p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
+				p.style.fontSize = "30px";
+			}
 
-    <div style="background-color: powderblue">
+			else if (val == 1) {
+				val--;
+				var v = document.getElementById('motivation');
+				v.style.color = "blue";
+				v.innerHTML = "<i> If people are doubting how far you can go, go so far that you can't ear them any more. </i>"
+				v.style.fontSize = "30px";
+				var p = document.getElementById("poet");
+				p.style.color = "green";
+				p.innerHTML = "<i> ----------------------- Michele Ruiz</i>"
+				p.style.fontSize = "20px";
+			}
 
-     <b><u><i><h2 class="Aclonica4" style="text-align: center; margin: 30px;" id = "my competitve programming profile">My Competitve programming profile</h2></i></u> </b>
-    <p> I try to participate in programming contest of different online judges. </p>
-    <ol>
-      <li>Codeforces: <a href="http://codeforces.com/profile/prodipto0" target="_blank">http://codeforces.com/profile/prodipto0</a></li>
-      <br>
-      <li>Codechef: <a href="https://www.codechef.com/users/dipto_2014" target="_blank">https://www.codechef.com/users/dipto_2014</a></li>
-      <br>
-      <li>Toph: <a href="https://toph.co/u/Dipto_Debdip" target="_blank">https://toph.co/u/Dipto_Debdip</a></li>
-      <br>
-    </ol>
+			else if (val == 2) {
+				val--;
+				var v = document.getElementById('motivation');
+				v.style.color = "blue";
+				v.innerHTML = "<i> You don't have to be great to start, but you have to start to be great. </i>"
+				v.style.fontSize = "40px";
+				var p = document.getElementById("poet");
+				p.style.color = "green";
+				p.innerHTML = "<i> ----------------------- Zig Ziglar</i>"
+				p.style.fontSize = "20px";
+			}
 
+			else if (val == 3) {
+				val--;
+				var v = document.getElementById('motivation');
+				v.style.color = "blue";
+				v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
+				v.style.fontSize = "50px";
+				var p = document.getElementById("poet");
+				p.style.color = "green";
+				p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
+				p.style.fontSize = "30px";
+			}
 
-    </div>  
-  
-  </div>
-  </main>
+			else if (val == 4) {
+				val--;
+				var v = document.getElementById('motivation');
+				v.style.color = "blue";
+				v.innerHTML = "<i> If you don't build your dreams, someone else will hire you to build theirs.</i>"
+				v.style.fontSize = "50px";
+				var p = document.getElementById("poet");
+				p.style.color = "green";
+				p.innerHTML = ""
+				p.style.fontSize = "30px";
+			}
+		}
+</script>
 </body>
-<h6  style="color: white;">Last Edited: 28.12.2020 00.24</h6>
 </html>
