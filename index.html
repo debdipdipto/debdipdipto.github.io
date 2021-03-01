@@ -2,147 +2,104 @@
 <html>
 <head>
 	<title>Javascript Practice</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
 </head>
 <body>
 <div style="background-color: gold; border-radius: 5px; border: dashed; height: 200px;">
-<p style="text-align: center; margin-top: 45px; color: black;" id="motivation"> You will get a lot of motivatinal quotes from here! So, get motivated and reharged again!</p>
-<p style="text-align: center; margin-top: 45px" id="poet"> 
+<p style="text-align: center; margin-top: 45px; color: navy; font-size: 30px; font-family: Akaya Telivigala;" id="motivation"> You will get a lot of motivational quotes from here! So, get motivated and reharged again!</p>
+<p style="text-align: center; margin-top: 45px; font-family: Akaya Telivigala; font-size: 25px;" id="poet"> 
 	<span>Click <b><i>Next</i></b> button to read further or click <b><i>Previous</i></b> button to read the previous quotes!</span> </p>
 </div>
-<button onclick="beMotivatedD()" style="color: yellow;  width: 200px; height: 100px; margin: 30px; background-color: red;"> <p style="font-size: 20"></p> Previous </button>
-<button onclick="beMotivatedI()" style="color: yellow; width: 200px; height: 100px; margin-left: 700px; background-color: blue;"> Next </button>
-<p id="writing"></p>
+<button id = "prev" onclick="prev()"  style="color: yellow;  width: 200px; height: 100px; margin: 30px; background-color: red;"> <p style="font-size: 20"></p> Previous </button>
+<button id = "next" onclick="next()" style="color: yellow; width: 200px; height: 100px; margin-left: 700px; background-color: blue;"> Next </button>
 <script>
-	var val = 0;
-	function beMotivatedI() {
-		if (val == 5) {
-			val = val % 5;
+/* 
+		1. The best way to predict the future is to create it ---> Peter Drucker
+		2. If people are doubting how far you can go, go so far that you can't hear them any more. ---> Michele Ruiz
+		3. You don't have to be great to start, but you have to start to be great. ---> Zig Ziglar
+		4. You can't change your future, but you can change your habits, and surely your habits will change your future. ---> APJ Abdul Kalam 
+		5. If you don't build your dreams, someone else will hire you to build theirs.
+*/
+	var at = 0;
+	var buttonDisapper = 0;
+	var buttonDisapperNext = 0;
+	var buttonDisapperPrev = 0;
+	function next() {
+		at++;
+		var v = document.getElementById('motivation');
+		var p = document.getElementById('poet');
+		var btnNext = document.getElementById('next');
+		var btnPrev = document.getElementById('prev');
+		if (buttonDisapperPrev) {
+			btnPrev.style.opacity = "1.0";
+			at = 2;
+			buttonDisapperPrev ^= 1;
 		}
-		console.log(val);
-		if (val == 0) {
-			val++;
-			var v = document.getElementById('motivation');
-			v.style.color = "blue";
-			v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
-			v.style.fontSize = "50px";
-			var p = document.getElementById("poet");
-			p.style.color = "green";
-			p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
-			p.style.fontSize = "30px";
-		}
-
-		else if (val == 1) {
-			val++;
-			var v = document.getElementById('motivation');
-			v.style.color = "blue";
-			v.innerHTML = "<i> If people are doubting how far you can go, go so far that you can't ear them any more. </i>"
-			v.style.fontSize = "30px";
-			var p = document.getElementById("poet");
-			p.style.color = "green";
-			p.innerHTML = "<i> ----------------------- Michele Ruiz</i>"
-			p.style.fontSize = "20px";
-		}
-
-		else if (val == 2) {
-			val++;
-			var v = document.getElementById('motivation');
-			v.style.color = "blue";
-			v.innerHTML = "<i> You don't have to be great to start, but you have to start to be great. </i>"
-			v.style.fontSize = "40px";
-			var p = document.getElementById("poet");
-			p.style.color = "green";
-			p.innerHTML = "<i> ----------------------- Zig Ziglar</i>"
-			p.style.fontSize = "20px";
-		}
-
-		else if (val == 3) {
-			val++;
-			var v = document.getElementById('motivation');
-			v.style.color = "blue";
-			v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
-			v.style.fontSize = "50px";
-			var p = document.getElementById("poet");
-			p.style.color = "green";
-			p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
-			p.style.fontSize = "30px";
-		}
-
-		else if (val == 4) {
-			val++;
-			var v = document.getElementById('motivation');
-			v.style.color = "blue";
-			v.innerHTML = "<i> If you don't build your dreams, someone else will hire you to build theirs.</i>"
-			v.style.fontSize = "50px";
-			var p = document.getElementById("poet");
-			p.style.color = "green";
+		v.style.fontSize = "30px";
+		p.style.fontSize = "20px";
+		v.style.color = "blue";
+		p.style.color = "green";
+		if (at == 1) {
+			v.innerHTML = "<i> The best way to predict the future is to create it. </i>";
+			p.innerHTML = "<i> -------> Peter Drucker </i>"
+		} else if (at == 2) {
+			v.innerHTML = "<i> If people are doubting how far you can go, go so far that you can't hear them any more. </i>";
+			p.innerHTML = "<i> -------> Michele Ruiz </i>"
+		} else if (at == 3) {
+			v.innerHTML = "<i> You don't have to be great to start, but you have to start to be great. </i>";
+			p.innerHTML = "<i> -------> Zig Ziglar </i>"
+		} else if (at == 4) {
+			v.innerHTML = "<i> You can't change your future, but you can change your habits, and surely your habits will change your future. </i>";
+			p.innerHTML = "<i> -------> APJ Abdul Kalam </i>"
+		} else if (at == 5) {
+			v.innerHTML = "<i> If you don't build your dreams, someone else will hire you to build theirs. </i>";
 			p.innerHTML = ""
-			p.style.fontSize = "30px";
-			val = 0;
+		} else {
+			alert("That is all for today, wish you a good day!");
+			btnNext.style.opacity = "0.0";
+			buttonDisapperNext = 1; 
 		}
 	}
-
-	function beMotivatedD() {
-			console.log(val);
-		  if (val == 0) {
-				val = 4;
-				var v = document.getElementById('motivation');
-				v.style.color = "blue";
-				v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
-				v.style.fontSize = "50px";
-				var p = document.getElementById("poet");
-				p.style.color = "green";
-				p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
-				p.style.fontSize = "30px";
+	
+	
+	function prev() {
+			at--;
+			var v = document.getElementById('motivation');
+			var p = document.getElementById('poet');
+			var btnNext = document.getElementById('next');
+			var btnPrev = document.getElementById('prev');
+			if (buttonDisapperNext) {
+				btnNext.style.opacity = "1.0";
+				at = 4;
+				buttonDisapperNext ^= 1;
 			}
-
-			else if (val == 1) {
-				val--;
-				var v = document.getElementById('motivation');
-				v.style.color = "blue";
-				v.innerHTML = "<i> If people are doubting how far you can go, go so far that you can't ear them any more. </i>"
-				v.style.fontSize = "30px";
-				var p = document.getElementById("poet");
-				p.style.color = "green";
-				p.innerHTML = "<i> ----------------------- Michele Ruiz</i>"
-				p.style.fontSize = "20px";
-			}
-
-			else if (val == 2) {
-				val--;
-				var v = document.getElementById('motivation');
-				v.style.color = "blue";
-				v.innerHTML = "<i> You don't have to be great to start, but you have to start to be great. </i>"
-				v.style.fontSize = "40px";
-				var p = document.getElementById("poet");
-				p.style.color = "green";
-				p.innerHTML = "<i> ----------------------- Zig Ziglar</i>"
-				p.style.fontSize = "20px";
-			}
-
-			else if (val == 3) {
-				val--;
-				var v = document.getElementById('motivation');
-				v.style.color = "blue";
-				v.innerHTML = "<i> The best way to predict the future is to create it. </i>"
-				v.style.fontSize = "50px";
-				var p = document.getElementById("poet");
-				p.style.color = "green";
-				p.innerHTML = "<i> ----------------------- Peter Drucker</i>"
-				p.style.fontSize = "30px";
-			}
-
-			else if (val == 4) {
-				val--;
-				var v = document.getElementById('motivation');
-				v.style.color = "blue";
-				v.innerHTML = "<i> If you don't build your dreams, someone else will hire you to build theirs.</i>"
-				v.style.fontSize = "50px";
-				var p = document.getElementById("poet");
-				p.style.color = "green";
+			v.style.fontSize = "30px";
+			p.style.fontSize = "20px";
+			v.style.color = "blue";
+			p.style.color = "green";
+			if (at == 1) {
+				v.innerHTML = "<i> The best way to predict the future is to create it. </i>";
+				p.innerHTML = "<i> -------> Peter Drucker </i>"
+			} else if (at == 2) {
+				v.innerHTML = "<i> If people are doubting how far you can go, go so far that you can't hear them any more. </i>";
+				p.innerHTML = "<i> -------> Michele Ruiz </i>"
+			} else if (at == 3) {
+				v.innerHTML = "<i> You don't have to be great to start, but you have to start to be great. </i>";
+				p.innerHTML = "<i> -------> Zig Ziglar </i>"
+			} else if (at == 4) {
+				v.innerHTML = "<i> You can't change your future, but you can change your habits, and surely your habits will change your future. </i>";
+				p.innerHTML = "<i> -------> APJ Abdul Kalam </i>"
+			} else if (at == 5) {
+				v.innerHTML = "<i> If you don't build your dreams, someone else will hire you to build theirs. </i>";
 				p.innerHTML = ""
-				p.style.fontSize = "30px";
+			} else {
+				alert("That is all for today, wish you a good day!");
+				btnPrev.style.opacity = "0.0";
+				buttonDisapperPrev = 1;
 			}
-		}
+		} 
+
 </script>
 </body>
 </html>
