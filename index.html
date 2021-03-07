@@ -1,0 +1,71 @@
+<html>
+  <head></head>
+  <body style="background-color : aquamarine">
+      <label for="number" > <b> <i> Enter a number to check whether it is even or odd : </i> </b> </label>
+      <br>
+      <br>
+      <input id="number" type="number" autocomplete="on">
+      <br>
+      <br>
+      <b><button onclick="checkingEvenOrOdd()" style="border-radius: 10px; color: white; background-color: red; width: 150px;">
+       <i><b> Submit! </b> </i> </button>
+      </b>
+      <p id = "result"></p>
+      <br>
+      <label for="rangeEven"> <i><b>Enter the range for your even numbers to get all the even numbers from 1 to your given range:</b></i></label>
+      <br>
+      <br>
+      <input type="number" autocomplete="on" id = "rangeEven">
+      <br>
+      <br>
+      <button onclick="rangeEven()"  style="border-radius: 10px; color: blueviolet; background-color: yellow; width: 150px;"> <i><b> Submit! </b> </i></button>
+      <br>
+      <p id = "resultEven"></p>
+
+      <br>
+      <label for="rangeOdd"> <b><i>Enter the range for your all odd numbers to get all the odd numbers from 1 to your given range:</i></b> </label>
+      <br>
+      <br>
+      <input type="number" autocomplete="on" id="rangeOdd">
+      <br>
+      <br>
+      <button onclick="rangeOdd()" style="border-radius: 10px; color: yellow; background-color: green; width: 150px;"> <i><b> Submit! </b> </i> </button>
+      <br>
+      <p id="resultOdd"></p>
+
+
+  </body>
+  <script>
+    function checkingEvenOrOdd() {
+      var num = parseInt(document.getElementById('number').value);
+      var res = document.getElementById('result');
+      if (num & 1) {
+        res.innerHTML = " <hr> <b> <i> " + num + " is odd!" + "</b> </i> <hr>";
+      } else {
+        res.innerHTML = " <hr> <b> <i> " + num + " is even!" + "</b> </i> <hr>";
+      }
+    }
+    function rangeEven() {
+      var limit = parseInt(document.getElementById('rangeEven').value);
+      var res = " <hr /> <b> <i> Here are your all even numbers from 1 to " + limit + ": " + "<br> <br>";
+      for (var i = 2; i <= limit; i += 2) {
+        res += i + ', ';
+      }
+      res += "</b> </i> <hr />"
+      var resultEven = document.getElementById('resultEven');
+      resultEven.innerHTML = res;
+      
+    }
+    function rangeOdd() {
+        var limit = parseInt(document.getElementById('rangeOdd').value);
+        var res = " <hr /> <b> <i> Here are your odd numbers from 1 to " + limit + ": " + "<br> <br>";
+        for (var i = 1; i <= limit; i += 2) {
+          res += i + ', ';
+        }
+        res += "</b> </i> <hr />"
+        var resultOdd = document.getElementById('resultOdd');
+        resultOdd.innerHTML = res;
+      }
+  </script>
+  </body>
+</html>
