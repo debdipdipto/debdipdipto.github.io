@@ -1,10 +1,18 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      .inputClass {
+        border-radius: 30px;
+        height: 30px;
+        width : 300px;
+      }
+    </style>
+  </head>
   <body style="background-color : aquamarine">
       <label for="number" > <b> <i> Enter a number to check whether it is even or odd : </i> </b> </label>
       <br>
       <br>
-      <input id="number" type="number" autocomplete="on">
+      <input class = "inputClass" id="number" type="number" autocomplete="on">
       <br>
       <br>
       <b><button onclick="checkingEvenOrOdd()" style="border-radius: 10px; color: white; background-color: red; width: 150px;">
@@ -12,10 +20,10 @@
       </b>
       <p id = "result"></p>
       <br>
-      <label for="rangeEven"> <i><b>Enter the range for your even numbers to get all the even numbers from 1 to your given range:</b></i></label>
+      <label class = "inputClass" for="rangeEven"> <i><b>Enter the range for your even numbers to get all the even numbers from 1 to your given range:</b></i></label>
       <br>
       <br>
-      <input type="number" autocomplete="on" id = "rangeEven">
+      <input type="number" autocomplete="on" id = "rangeEven" style="width: 300px; height: 30px; border-radius: 30px;">
       <br>
       <br>
       <button onclick="rangeEven()"  style="border-radius: 10px; color: blueviolet; background-color: yellow; width: 150px;"> <i><b> Submit! </b> </i></button>
@@ -26,14 +34,23 @@
       <label for="rangeOdd"> <b><i>Enter the range for your all odd numbers to get all the odd numbers from 1 to your given range:</i></b> </label>
       <br>
       <br>
-      <input type="number" autocomplete="on" id="rangeOdd">
+      <input class = "inputClass" type="number" autocomplete="on" id="rangeOdd">
       <br>
       <br>
       <button onclick="rangeOdd()" style="border-radius: 10px; color: yellow; background-color: green; width: 150px;"> <i><b> Submit! </b> </i> </button>
       <br>
       <p id="resultOdd"></p>
 
+      <br>
+     <label for="set"> <b> <i> Enter a set to get all its subset : </i></b></label>
+     <br>
+     <br>
+     <input type="text" id = "set" class="inputClass" placeholder="example : {1, 2, 3}">
+     <br>
+     <br>
+    <button onclick="subsetPrinting()" style="border-radius: 10px; color: black; background-color: gold; width: 150px;"> <b><i>Submit!</i></b> </button>
 
+    <p id = "subsetResult"></p>
   </body>
   <script>
     function checkingEvenOrOdd() {
@@ -65,7 +82,44 @@
         res += "</b> </i> <hr />"
         var resultOdd = document.getElementById('resultOdd');
         resultOdd.innerHTML = res;
+    }
+    function subsetPrinting() {
+      var userGivenSet = document.getElementById('set').value;
+      var myConvertedSet = [];
+      var sset = "";
+      for (var i = 1; i < userGivenSet.length - 1; i++) {
+        if (userGivenSet[i] == ',') {
+          myConvertedSet.push(sset);
+          sset = "";
+        } else {
+          sset += userGivenSet[i];
+        }
       }
+      myConvertedSet.push(sset);
+      var res = [];
+      var n = myConvertedSet.length;
+      for (var i = 0; i < 2 ** n; i++) {
+        var subset = [];
+        for (var j = 0; j < n; j++) {
+          if (i & (1 << j)) {
+            subset.push(myConvertedSet[j]);
+          }
+        }
+        res.push(subset);
+      }
+      var strRes = "<hr> <b> <i> Here are yours all subsets : <br> ";
+      for (var i = 0; i < res.length; i++) {
+        if (i == res.length - 1) {
+          strRes += "{" + res[i] + "}";
+        }
+        else {
+          strRes += "{" + res[i] + "}, ";
+        }
+      }
+      strRes += "</i> </b> <hr>"
+      var displa = document.getElementById('subsetResult');
+      displa.innerHTML = strRes;
+    }
   </script>
   </body>
 </html>
