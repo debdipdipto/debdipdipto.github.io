@@ -6,6 +6,10 @@
         height: 30px;
         width : 300px;
       }
+      .btnClass {
+        border-radius: 10px;
+        width: 150px;
+      }
     </style>
   </head>
   <body style="background-color : aquamarine">
@@ -45,12 +49,22 @@
      <label for="set"> <b> <i> Enter a set to get all its subset : </i></b></label>
      <br>
      <br>
-     <input type="text" id = "set" class="inputClass" placeholder="example : {1, 2, 3}">
+     <input type="text" id = "set" class="inputClass" placeholder="example : 1, 2, 3">
      <br>
      <br>
     <button onclick="subsetPrinting()" style="border-radius: 10px; color: black; background-color: gold; width: 150px;"> <b><i>Submit!</i></b> </button>
+   <p id = "subsetResult"></p>
 
-    <p id = "subsetResult"></p>
+
+   <br>
+   <label for="rangeFib"><b><i>Enter the length of your fibonacci sequence : </i></b></label>
+   <br>
+   <br>
+   <input type="number" id="rangeFib" class="inputClass">
+   <br>
+   <br>
+   <button class="btnClass" onclick="fibSeq()" style="background-color: red; color: yellow;"><b><i>Submit!</i></b></button>
+   <p id="fibResult"></p>
   </body>
   <script>
     function checkingEvenOrOdd() {
@@ -87,7 +101,7 @@
       var userGivenSet = document.getElementById('set').value;
       var myConvertedSet = [];
       var sset = "";
-      for (var i = 1; i < userGivenSet.length - 1; i++) {
+      for (var i = 0; i < userGivenSet.length; i++) {
         if (userGivenSet[i] == ',') {
           myConvertedSet.push(sset);
           sset = "";
@@ -119,6 +133,23 @@
       strRes += "</i> </b> <hr>"
       var displa = document.getElementById('subsetResult');
       displa.innerHTML = strRes;
+    }
+    function fibSeq() {
+      var len = document.getElementById('rangeFib').value;
+      len = parseInt(len);
+      var show = document.getElementById('fibResult');
+      var f = 0, s = 1;
+      var cnt = 2;
+      var res = "<hr> <b> <i> Here is your fibonacci sequence : " + "<br> <br> " + f + ", " + s +  ', ';
+      while (cnt < len) {
+        var t = f + s;
+        res += t + ", ";
+        f = s;
+        s = t;
+        cnt++;
+      }
+      res += "</i> </b> <hr>"
+      show.innerHTML = res;
     }
   </script>
   </body>
