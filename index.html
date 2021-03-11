@@ -12,59 +12,94 @@
       }
     </style>
   </head>
-  <body style="background-color : aquamarine">
-      <label for="number" > <b> <i> Enter a number to check whether it is even or odd : </i> </b> </label>
-      <br>
-      <br>
-      <input class = "inputClass" id="number" type="number" autocomplete="on">
-      <br>
-      <br>
-      <b><button onclick="checkingEvenOrOdd()" style="border-radius: 10px; color: white; background-color: red; width: 150px;">
-       <i><b> Submit! </b> </i> </button>
-      </b>
-      <p id = "result"></p>
-      <br>
-      <label class = "inputClass" for="rangeEven"> <i><b>Enter the range for your even numbers to get all the even numbers from 1 to your given range:</b></i></label>
-      <br>
-      <br>
-      <input type="number" autocomplete="on" id = "rangeEven" style="width: 300px; height: 30px; border-radius: 30px;">
-      <br>
-      <br>
-      <button onclick="rangeEven()"  style="border-radius: 10px; color: blueviolet; background-color: yellow; width: 150px;"> <i><b> Submit! </b> </i></button>
-      <br>
-      <p id = "resultEven"></p>
-
-      <br>
-      <label for="rangeOdd"> <b><i>Enter the range for your all odd numbers to get all the odd numbers from 1 to your given range:</i></b> </label>
-      <br>
-      <br>
-      <input class = "inputClass" type="number" autocomplete="on" id="rangeOdd">
-      <br>
-      <br>
-      <button onclick="rangeOdd()" style="border-radius: 10px; color: yellow; background-color: green; width: 150px;"> <i><b> Submit! </b> </i> </button>
-      <br>
-      <p id="resultOdd"></p>
-
-      <br>
-     <label for="set"> <b> <i> Enter a set to get all its subset : </i></b></label>
-     <br>
-     <br>
-     <input type="text" id = "set" class="inputClass" placeholder="example : 1, 2, 3">
-     <br>
-     <br>
-    <button onclick="subsetPrinting()" style="border-radius: 10px; color: black; background-color: gold; width: 150px;"> <b><i>Submit!</i></b> </button>
-   <p id = "subsetResult"></p>
-
-
-   <br>
-   <label for="rangeFib"><b><i>Enter the length of your fibonacci sequence : </i></b></label>
-   <br>
-   <br>
-   <input type="number" id="rangeFib" class="inputClass">
-   <br>
-   <br>
-   <button class="btnClass" onclick="fibSeq()" style="background-color: red; color: yellow;"><b><i>Submit!</i></b></button>
-   <p id="fibResult"></p>
+  <body style="background-color : aquamarine; border-radius: 10px;">
+      <div style="border-radius: 10px;">
+      <div id="content" style="margin-left: 0%;">
+        <div style="background-color: green; color: yellow; border-radius: 10px;">
+          <label for="number"> <b> <i> Enter a number to check whether it is even or odd : </i> </b> </label>
+          <br>
+          <br>
+          <input class="inputClass" id="number" type="number" autocomplete="on">
+          <br>
+          <br>
+          <b><button onclick="checkingEvenOrOdd()"
+              style="border-radius: 10px; color: white; background-color: red; width: 150px;">
+              <i><b> Submit! </b> </i> </button>
+          </b>
+          <p id="result"></p>
+        </div>
+        <br>
+        <div style="background-color: black; color: white; border-radius: 10px;">
+          <label class="inputClass" for="rangeEven"> <i><b>Enter the range for your even numbers to get all the even numbers
+                from
+                1 to your given range:</b></i></label>
+          <br>
+          <br>
+          <input type="number" autocomplete="on" id="rangeEven" style="width: 300px; height: 30px; border-radius: 30px;">
+          <br>
+          <br>
+          <button onclick="rangeEven()" style="border-radius: 10px; background-color: white; width: 150px;">
+            <i><b style="color: black !important;"> Submit! </b> </i></button>
+          <br>
+          <p id="resultEven"></p>
+        </div>
+        <br>
+      
+        <div style="background-color: red; color: white; border-radius: 10px;">
+          <label for="rangeOdd"> <b><i>Enter the range for your all odd numbers to get all the odd numbers from 1 to your
+                given
+                range:</i></b> </label>
+          <br>
+          <br>
+          <input class="inputClass" type="number" autocomplete="on" id="rangeOdd">
+          <br>
+          <br>
+          <button onclick="rangeOdd()" style="border-radius: 10px; color: yellow; background-color: green; width: 150px;">
+            <i><b>
+                Submit! </b> </i> </button>
+          <br>
+          <p id="resultOdd"></p>
+        </div>
+        <br>
+        <div style="background: pink; border-radius: 10px;">
+          <label for="set"> <b> <i> Enter a set to get all its subset : </i></b></label>
+          <br>
+          <br>
+          <input type="text" id="set" class="inputClass" placeholder="example : 1, 2, 3">
+          <br>
+          <br>
+          <button onclick="subsetPrinting()" style="border-radius: 10px; color: black; background-color: gold; width: 150px;">
+            <b><i>Submit!</i></b> </button>
+          <p id="subsetResult"></p>
+        </div>
+      
+      
+        <br>
+        <div style="background-color: blue; border-radius: 10px;">
+          <label for="rangeFib"><b><i style="color: white;;">Enter the length of your fibonacci sequence : </i></b></label>
+          <br>
+          <br>
+          <input type="number" id="rangeFib" class="inputClass">
+          <br>
+          <br>
+          <button class="btnClass" onclick="fibSeq()"
+            style="background-color: red; color: yellow;"><b><i>Submit!</i></b></button>
+          <p id="fibResult" style="color: white;"></p>
+        </div>
+      
+        <br>
+        <div style="background-color: yellow; border-radius: 10px;">
+          <label for="numProperty"> <b><i>Enter a number to get its property : </i></b></label>
+          <br>
+          <br>
+          <input type="number" id="numProperty" class="inputClass">
+          <br>
+          <br>
+          <button class="btnClass" onclick="numProperty()" style="background-color: green; color: red;">
+            <i><b>Submit!</b></i></button>
+          <p id="numPropertyRes"></p>
+        </div>
+      </div></div>
   </body>
   <script>
     function checkingEvenOrOdd() {
@@ -149,6 +184,39 @@
         cnt++;
       }
       res += "</i> </b> <hr>"
+      show.innerHTML = res;
+    }
+    function numProperty() {
+      var num = document.getElementById('numProperty').value;
+      var show = document.getElementById('numPropertyRes');
+      num = parseInt(num);
+      var divisor = [];
+      for (var i = 1; i * i <= num; i++) {
+        if (num % i == 0) {
+          divisor.push(i);
+          if (i != num / i) {
+            divisor.push(num / i);
+          }
+        }
+      }
+      divisor.sort(function (a, b) {
+        return a - b;
+      });
+      var res = "<hr> <b> <i> ";
+      if (divisor.length == 2) {
+        res += "The number is a prime number!"
+      } else {
+        res += "The number is a composite number!";
+      }
+      res += "<hr> " + "It has total " + divisor.length + " divisors. And these are: <br> "
+      for (var i = 0; i < divisor.length; i++) {
+        if (i == divisor.length - 1) {
+          res += divisor[i];
+        } else {
+          res += divisor[i] + ', ';
+        }
+      }
+      res += " <br> <hr> </i> </b> <hr>";
       show.innerHTML = res;
     }
   </script>
