@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  
+
+
+  <div
+    style="background-color: dodgerblue; margin-top: 9%; margin-left: 40%; font-family: cursive; width: 213px; height: 40px; text-align: center; font-weight: 600; font-size: large;">
+    Tic Tac Toe</div>
+  
+  <div>
+    <button id="11" onclick="steps('11')"
+      style="margin-left: 40%; font-weight: 600px; margin-top: 10px; border-color: black; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+    <button id="12" onclick="steps('12')"
+      style="margin-left: 1%; font-weight: 600px; margin-top: 10px; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+    <button id="13" onclick="steps('13')"
+      style="margin-left: 1%; font-weight: 600px; margin-top: 10px; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+  </div>
+  
+  <div>
+    <button id="21" onclick="steps('21')"
+      style="margin-left: 40%; font-weight: 600px; margin-top: 10px; border-color: black; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+    <button id="22" onclick="steps('22')"
+      style="margin-left: 1%; font-weight: 600px; margin-top: 10px; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+    <button id="23" onclick="steps('23')"
+      style="margin-left: 1%; font-weight: 600px; margin-top: 10px; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+  </div>
+  
+  <div>
+    <button id="31" onclick="steps('31')"
+      style="margin-left: 40%; font-weight: 600px;  margin-top: 10px; border-color: black; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+    <button id="32" onclick="steps('32')"
+      style="margin-left: 1%; font-weight: 600px; margin-top: 10px; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+    <button id="33" onclick="steps('33')"
+      style="margin-left: 1%; font-weight: 600px; margin-top: 10px; border: 10px; background-color:darkorange; width: 60px; height: 60px; text-align: center;">
+      .</button>
+  </div>
+  
+  
+  <div id="result"
+    style=" display: flex; background-color: white; margin-top: 1%; margin-left: 40%; font-family: cursive; width: 213px; height: 50px; text-align: center; font-weight: 600; font-size: large;">
+  </div>
+  
+  <div style="margin-bottom : 15%"></div>
+
+
+
+
+  
+  <!-- <footer style="text-align: center;"><b><em>Developed by Debdip Das Dipto</em></b></footer>
+  <footer style="text-align: center;"><b><em>1.23 AM 3/15/2021</em></b></footer> -->
+  
+  <!-- Java Script Codes start from here -->
+
+  <script>
+
+    var grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+    var f = 0;
+    var nn = 1;
+    var step = 0; 
+    function steps(id) {
+      var now = document.getElementById(id);
+      if (nn == 1) {
+        if (grid[parseInt(id[0])][parseInt(id[1])] == 0 && !f ) {
+          now.style.fontWeight = "600px";
+          now.innerText = 'X';
+          grid[parseInt(id[0])][parseInt(id[1])] = 'X';
+          nn = 0;
+          step += 1;
+        }
+      } else {
+        if (grid[parseInt(id[0])][parseInt(id[1])] == 0 && !f) {
+          now.innerText = 'O';
+          now.style.fontWeight = "600px";
+          grid[parseInt(id[0])][parseInt(id[1])] = 'O';
+          nn = 1;
+          step += 1;
+        }
+      }
+      if (grid[1][1] == grid[2][2] && grid[2][2] == grid[3][3] && grid[1][1] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[1][1];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[1][1] == grid[1][2] && grid[1][2] == grid[1][3] && grid[1][1] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[1][1];
+        res.innerText = "Player " + '(' + show + ") is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[1][1] == grid[2][1] && grid[2][1] == grid[3][1] && grid[1][1] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[1][1];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[2][1] == grid[2][2] && grid[2][2] == grid[2][3] && grid[2][1] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[2][1];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[3][1] == grid[3][2] && grid[3][2] == grid[3][3] && grid[3][1] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[3][1];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[1][2] == grid[2][2] && grid[2][2] == grid[3][2] && grid[1][2] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[1][2];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[1][3] == grid[2][3] && grid[2][3] == grid[3][3] && grid[1][3] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[1][3];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+
+      if (grid[1][3] == grid[2][2] && grid[2][2] == grid[3][1] && grid[1][3] != 0 && !f) {
+        var res = document.getElementById('result');
+        var show = grid[1][3];
+        res.innerText = "Player " + '(' + show + ')' + " is the winner!";
+        f = 1;
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+      
+      if (step >= 9 && f == 0) {
+        var res = document.getElementById('result');
+        document.getElementById('result').innerText = "The game is draw! Try again!"
+        res.style.backgroundColor = "dodgerblue";
+        res.style.fontWeight = "600px";
+      }
+    }
+  </script>
+</body>
