@@ -19,7 +19,6 @@
   align-items: center;
   grid-gap: 3px;
   text-align: center;
-  position: sticky;
 }
 a {
    transition: width 2s, height 2s, transform 2s;
@@ -28,4 +27,36 @@ a {
 .menu > a:hover {
   color: blue;
   font-size: 20px;
+}
+.aboutUs {
+  background-color: blue;
+}
+.aboutUs > p {
+  font-family: 'Hind Siliguri';
+  color: yellow;
+  text-align: start;
+  font-size: 20px;
+}
+.newsOfOlympiads {
+  font-family: 'Hind Siliguri';
+  color: blue;
+  background-color: yellow;
+}
+.combinedDiv {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.blogs {
+  font-family: 'Hind Siliguri';
+  background-color: blue;
+  color: yellow;
+  text-align: center;
+  /* align-items: center; */
+}
+.joinWithUs {
+  background-color: yellow;
+  color: blue;
+  text-align: center;
+  font-family: 'Hind Siliguri';
+  font-size: 23px;
 }
