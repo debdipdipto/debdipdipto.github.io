@@ -1,0 +1,31 @@
+.header {
+  display: grid; 
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  background-color: blue;
+  background-repeat: no-repeat;
+  width: auto;
+  border-radius: 10px;
+}
+.header > p {
+  color: yellow;
+  font-size: 40px;
+  font-family: 'Bree Serif';
+}
+.menu {
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  grid-gap: 3px;
+  text-align: center;
+  position: sticky;
+}
+a {
+   transition: width 2s, height 2s, transform 2s;
+   font-family: 'Hind Siliguri';
+}
+.menu > a:hover {
+  color: blue;
+  font-size: 20px;
+}
